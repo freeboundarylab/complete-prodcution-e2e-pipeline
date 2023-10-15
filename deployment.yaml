@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: complete-prodcution-e2e-pipeline
+  name: complete-prodcution-e2e-pipeline:1.0.0-14
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: complete-prodcution-e2e-pipeline
+      app: complete-prodcution-e2e-pipeline:1.0.0-14
   template:
     metadata:
       labels:
-        app: complete-prodcution-e2e-pipeline
+        app: complete-prodcution-e2e-pipeline:1.0.0-14
     spec:
       containers:
-        - name: complete-prodcution-e2e-pipeline
-          image: lulgabc/complete-prodcution-e2e-pipeline:latest
+        - name: complete-prodcution-e2e-pipeline:1.0.0-14
+          image: lulgabc/complete-prodcution-e2e-pipeline:1.0.0-14
           resources:
             limits:
               memory: "256Mi"
