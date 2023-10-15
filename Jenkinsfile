@@ -84,6 +84,20 @@ pipeline{
             }
         }
 
+        stage("Push the changed deployment file to Git") {
+            steps {
+                sh """
+	                git config --global user.name "lulg"
+                    git config --global user.email "freeboundarylab@gmail.com"
+                    git add deployment.yaml
+                    git commit -m "Updated Build Tag for Deployment"
+                """
+                withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName:'Default')]) {
+                    sh "git push https://github.com/freeboundarylab/complete-prodcution-e2e-pipeline main"
+                }
+            }
+        }
+
     }
 
 }
