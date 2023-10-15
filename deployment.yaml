@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: complete-prodcution-e2e-pipeline
-          image: lulgabc/complete-prodcution-e2e-pipeline:latest
+          image: lulgabc/complete-prodcution-e2e-pipeline:1.0.0-18
           resources:
             limits:
               memory: "256Mi"
