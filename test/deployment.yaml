@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: complete-prodcution-e2e-pipeline
+  name: complete-prodcution-e2e-pipeline-test
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: complete-prodcution-e2e-pipeline
+      app: complete-prodcution-e2e-pipeline-test
   template:
     metadata:
       labels:
-        app: complete-prodcution-e2e-pipeline
+        app: complete-prodcution-e2e-pipeline-test
     spec:
       containers:
-        - name: complete-prodcution-e2e-pipeline
+        - name: complete-prodcution-e2e-pipeline-test
           image: lulgabc/complete-prodcution-e2e-pipeline:1.0.0-18
           resources:
             limits:
