@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: another
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/freeboundarylab/complete-prodcution-e2e-pipeline.git
+    targetRevision: HEAD
+    path: test
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default

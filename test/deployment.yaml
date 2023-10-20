@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: complete-prodcution-e2e-pipeline
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: complete-prodcution-e2e-pipeline
+  template:
+    metadata:
+      labels:
+        app: complete-prodcution-e2e-pipeline
+    spec:
+      containers:
+        - name: complete-prodcution-e2e-pipeline
+          image: lulgabc/complete-prodcution-e2e-pipeline:1.0.0-18
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8080
